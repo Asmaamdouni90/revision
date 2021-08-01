@@ -1,0 +1,28 @@
+<h1>ajouter une equipe</h1>
+{{ form(formEquipe) }}
+
+<h1>la liste des equipes</h1>
+<table border="3">
+    <tr>
+        <th>id</th>
+        <th>nom</th>
+        <th>classe</th>
+        <th>projet</th>
+    </tr>
+
+
+{% for equipes in equipe %}
+    <tr>
+        <td> {{ equipes.id }}</td>
+        <td> {{ equipes.nom }}</td>
+        <td> {{ equipes.classe }}</td>
+        <td> {{ equipes.projet }}</td>
+
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+<h1>ajouter un projet</h1>
+{{ form (formProjet) }}

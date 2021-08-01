@@ -1,0 +1,27 @@
+<h1>La liste des Classes</h1>
+{% if tabprojet is empty %}
+    <h1> Pas de formation</h1>
+{% else %}
+    <table border="1">
+        <tr>
+            <td>Id</td>
+            <td>libelle</td>
+            <td>categorie</td>
+            <td>action</td>
+
+        </tr>
+        {% for i in tabprojet %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.libelle }}</td>
+                <td>{{ i.categorie }}</td>
+                <td>
+                    <a href="{{ path('updateprojet',{'id':i.id})}}">Modifier</a>
+                    <a href="{{ path('removeprojet',{'id':i.id})}}">supprimer</a>
+
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+<a href="{{ path('addprojet') }}">Ajouter un projet</a>
